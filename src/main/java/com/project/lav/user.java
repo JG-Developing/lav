@@ -1,9 +1,15 @@
 package com.project.lav;
 
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name = "\"user\"")
 @Entity
 public class user {
     @Id
@@ -12,14 +18,18 @@ public class user {
 
     private String username;
     private String password;
-    private String email;
+    private String passwordSalt;
+    private String passwordHash;
 
-    public Long getId() {
-        return id;
-    }
+    public user(){};
 
-    public void setId(Long id) {
-        this.id = id;
+    @Autowired
+    public user(String username, String password){
+        this.username = username;
+        this.password = password;
+        this.passwordSalt = RandomStringUtils.random(32);
+        this.passwordHash = DigestUtils.sha1Hex(password + passwordSalt);
+
     }
 
     public String getUsername() {
@@ -38,11 +48,7 @@ public class user {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public Boolean checkPassword(String password){
+        return DigestUtils.sha1Hex(password + passwordSalt).equals(passwordHash);
     }
 }
