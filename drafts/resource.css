@@ -1,0 +1,128 @@
+.resources {
+    position: fixed;    /* Stay in place */
+    bottom: 0;          /* Position at bottom of page */
+    height: 40px;       /* Specify a height (Changes with Code) */
+    width: 80vw;        /* Specify a width */
+    margin-left: 18vw;  /* Keep content at specific area of page */
+    margin-right: 2vw;
+    z-index: 1;         /* Stay on top */
+    background-color: white;
+    overflow-y: hidden; /* Disable vertical scroll */
+    transition: 0.5s;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.panel-title {
+    margin-top: 5px;
+    margin-left: 10px;
+    text-decoration: underline;
+    width: fit-content;
+}
+
+/* The sidepanel links */
+.resources a {
+    /* padding: 8px 8px 8px 32px; */
+    text-decoration: none;
+    /* font-size: 25px; */
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+/* .sidepanel a:hover {
+    color: #f1f1f1;
+} */
+
+.collapse-container {
+    display: none;
+    transition: 0.5s;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
+
+.expand-container {
+    display: block;
+    transition: 0.5s;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-left: 50px;
+    margin-top: 5px;
+    /* margin-right: 10px; */
+    font-size: 1.5rem;
+}
+
+/* .openbtn:hover {
+    background-color: #444;
+} */
+
+.info {
+    position: absolute;
+    border: 1px solid black;
+    width: 95%;
+    height: 0%;
+    bottom: 0;
+    right: 5px;
+    transition: 0.25s;
+}
+
+.vuln-nav-tabs {
+    position: absolute;
+    top: 0;
+    height: 30px;
+    width: fit-content;
+    margin-left: 150px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-bottom: none;
+}
+.vuln-nav-tabs button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    transition: 0.3s;
+}
+
+.vuln-nav-tabs button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.vuln-nav-tabs button.active {
+    background-color: #ccc;
+}
+
+.vulnContent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin-top: 0px;
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
