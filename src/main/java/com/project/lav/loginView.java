@@ -22,10 +22,10 @@ public class loginView extends Composite<LoginOverlay> {
             try {
                 authService.authenticate(event.getUsername(), event.getPassword());
                 if ("admin".equals(event.getUsername())){
-                //UI.getCurrent().navigate("admin");
+                    UI.getCurrent().navigate("adminView");
                 }
                 else if("guest".equals(event.getUsername()) && "".equals(event.getPassword())){
-                    UI.getCurrent().navigate("guestView");
+                    //UI.getCurrent().navigate("guestView");
                 }
                 else {
                     UI.getCurrent().navigate("userView");
