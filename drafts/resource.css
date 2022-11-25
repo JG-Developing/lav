@@ -1,3 +1,7 @@
+body {
+    background-color: #828282;
+}
+
 .resources {
     position: fixed;    /* Stay in place */
     bottom: 0;          /* Position at bottom of page */
