@@ -9,6 +9,7 @@ class MainPage extends LitElement {
                     display: block;
                     box-sizing: border-box;
                     height: 100%;
+                    background-color: #828282;
                 }
                 :host([hidden]), [hidden] {
                     display: none !important;
