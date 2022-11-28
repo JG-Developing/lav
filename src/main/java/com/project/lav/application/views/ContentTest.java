@@ -4,7 +4,6 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.html.Div;
 //import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.login.*;
-import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.PageTitle;
 //import com.vaadin.flow.component.Composite;
 //import com.vaadin.flow.component.UI;
@@ -26,16 +25,4 @@ public class ContentTest extends Div {
 
         add(loginForm);
     }
-
-    @Override
-	public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-		// inform the user about an authentication error
-		if(beforeEnterEvent.getLocation()  
-            .getQueryParameters()
-            .getParameters()
-            .containsKey("error")) {
-                loginForm.setError(true);
-        }
-    }
-    
 }
