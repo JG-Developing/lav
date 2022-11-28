@@ -1,6 +1,7 @@
-package com.project.lav;
+package com.project.lav.application.views;
 
-import com.project.lav.AuthService.AuthServiceException;
+import com.project.lav.application.data.service.AuthService;
+import com.project.lav.application.data.service.AuthService.AuthServiceException;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.login.LoginOverlay;

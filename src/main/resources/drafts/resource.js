@@ -5,6 +5,12 @@ function openNav() {
     document.getElementById("Resource-Collapse").style.display = "block";
     document.getElementById("Resource-Info").style.height = "80%";
   }
+
+  function openMenu() {
+    document.getElementById("Side-Menu").style.width = "15vw";
+    document.getElementById("Menu-Expand").style.display = "none";
+    document.getElementById("Menu-Collapse").style.display = "block";
+  }
   
   /* Set the width of the sidebar to 0 (hide it) */
   function closeNav() {
@@ -12,6 +18,12 @@ function openNav() {
     document.getElementById("Resource-Expand").style.display = "block";
     document.getElementById("Resource-Collapse").style.display = "none";
     document.getElementById("Resource-Info").style.height = "0%";
+  }
+
+  function closeMenu() {
+    document.getElementById("Side-Menu").style.width = "40px";
+    document.getElementById("Menu-Expand").style.display = "block";
+    document.getElementById("Menu-Collapse").style.display = "none";
   }
 
   function openVuln(evt, vulnName) {

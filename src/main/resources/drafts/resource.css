@@ -1,5 +1,14 @@
-body {
+html {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body, main {
     background-color: #828282;
+    height: 100%;
+    margin:0px;
+    overflow: hidden;
 }
 
 .resources {
@@ -10,11 +19,42 @@ body {
     margin-left: 18vw;  /* Keep content at specific area of page */
     margin-right: 2vw;
     z-index: 1;         /* Stay on top */
-    background-color: white;
+    background-color: white !important;
     overflow-y: hidden; /* Disable vertical scroll */
     transition: 0.5s;
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
+    border: 1px solid black;
+    border-bottom-style: none;
+}
+
+.content {
+    position: fixed;
+    background-color: white;
+    right: 2vw;
+    bottom: 210px;
+    width: 75vw;
+    height: 65vh;
+    margin-right: 2vw;
+    border: 1px solid black;
+    border-radius: 18px;
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: 0px;
+    height: 100%;
+    width: 40px;
+    z-index: 1;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border: 1px solid black;
+    border-left-style: none;
 }
 
 .panel-title {
@@ -24,8 +64,33 @@ body {
     width: fit-content;
 }
 
+.menu-title {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width:fit-content;
+    height: fit-content;
+}
+
+.header-text {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 10px;
+}
+
+.header {
+    position: fixed;
+    margin-left: 18vw;
+    margin-right: 2vw;
+    width: 80vw;
+    height:fit-content;
+    margin-bottom: 5px;
+}
+
 /* The sidepanel links */
-.resources a {
+.resources a, span {
     /* padding: 8px 8px 8px 32px; */
     text-decoration: none;
     /* font-size: 25px; */
@@ -38,6 +103,14 @@ body {
 /* .sidepanel a:hover {
     color: #f1f1f1;
 } */
+
+.menubtn-open {
+    display: block;
+}
+
+.menubtn-close {
+    display: none;
+}
 
 .collapse-container {
     display: none;

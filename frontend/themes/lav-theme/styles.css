@@ -1,0 +1,8 @@
+html, body {
+    height: 100% !important;
+    background-color: #828282;
+}
+
+body {
+    overflow: hidden;
+}

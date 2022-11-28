@@ -1,10 +1,12 @@
-package com.project.lav;
+package com.project.lav.application.data.service;
 
-//import com.vaadin.flow.component.Component;
+import com.project.lav.application.data.entity.user;
+import com.project.lav.application.data.repository.userRepository;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.notification.Notification;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+//import com.vaadin.flow.component.Component;
 
 @Service
 @Qualifier("AuthService")
