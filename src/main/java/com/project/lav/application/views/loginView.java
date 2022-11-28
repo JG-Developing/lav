@@ -9,7 +9,7 @@ import com.vaadin.flow.router.Route;
 
 //for styling
 //@CSSImport(".styles/views/login/login-view.css");
-@Route("login")
+@Route("")
 public class loginView extends Composite<LoginOverlay> {
     public loginView(AuthService authService){
         LoginOverlay layout = getContent();
