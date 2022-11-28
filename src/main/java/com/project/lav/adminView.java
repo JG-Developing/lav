@@ -4,8 +4,6 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.checkbox.CheckboxGroup;
-import com.vaadin.flow.component.checkbox.CheckboxGroupVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -16,12 +14,11 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.Lumo;
 
 
-@Route("userView")
+@Route("adminView")
 public class adminView extends AppLayout {
-    Button logout = new Button("Logout");
-
     public adminView(){
         DrawerToggle toggle = new DrawerToggle();
+        Button logout = new Button("Logout");
 
         H1 title = new H1("Dashboard");
         title.getStyle().set("font-size", "var(--lumo-font-size-1)").set("margin", "0");
@@ -50,7 +47,12 @@ public class adminView extends AppLayout {
 
         tabs.setOrientation(Tabs.Orientation.VERTICAL);
 
+        logout.addClickListener(onClick -> {
+            UI.getCurrent().navigate("login");
+        });
+
         addToDrawer(tabs);
+        addToDrawer(logout);
         addToNavbar(toggle, title);
     }
 }
