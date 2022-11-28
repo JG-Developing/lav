@@ -42,15 +42,7 @@ public class adminView extends AppLayout {
 
         // Div preferencesContent = new Div();
 
-        Button darkThemeToggle = new Button("Toggle dark theme", click -> {
-            ThemeList themeList = UI.getCurrent().getElement().getThemeList();
-
-            if (themeList.contains(Lumo.DARK)) {
-                themeList.remove(Lumo.DARK);
-            } else {
-                themeList.add(Lumo.DARK);
-            }
-        });
+        /* Dark Option Button moved to MenuPanel.java component */
 
         // preferencesContent.add(new VerticalLayout());
 

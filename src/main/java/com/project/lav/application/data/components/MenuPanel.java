@@ -6,13 +6,17 @@ import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.accordion.*;
 import com.vaadin.flow.component.orderedlayout.*;
+import com.vaadin.flow.dom.ThemeList;
+import com.vaadin.flow.theme.lumo.Lumo;
 import com.vaadin.flow.component.checkbox.*;
 import com.vaadin.flow.component.ClickEvent;
 //import com.vaadin.flow.component.orderedlayout.FlexComponent.*;
+import com.vaadin.flow.component.UI;
 
 public class MenuPanel extends Div {
     private Icon openMenu = new Icon(VaadinIcon.ANGLE_RIGHT);
     private Icon closeMenu = new Icon(VaadinIcon.ANGLE_LEFT);
+    private Button darkThemeToggle;
     VerticalLayout menuList;
     VerticalLayout checkList;
     VerticalLayout preferenceList;
@@ -69,7 +73,7 @@ public class MenuPanel extends Div {
         taskList = new Accordion();
         // taskList.getStyle().set("transition", "ease 0.5s");
         taskList.setWidthFull();
-        listTitle = new H2("Checklist");
+        listTitle = new H2("Tasks");
         listTitle.setClassName("menu-title");
 
         Checkbox loginTask1 = new Checkbox("Sign In As Guest");
@@ -120,7 +124,17 @@ public class MenuPanel extends Div {
         preferenceTitle = new H2("Preferences");
         preferenceTitle.setClassName("menu-title");
 
-        preferenceList.add(preferenceTitle);
+        darkThemeToggle = new Button("Toggle dark theme", click -> {
+            ThemeList themeList = UI.getCurrent().getElement().getThemeList();
+
+            if (themeList.contains(Lumo.DARK)) {
+                themeList.remove(Lumo.DARK);
+            } else {
+                themeList.add(Lumo.DARK);
+            }
+        });
+
+        preferenceList.add(preferenceTitle, darkThemeToggle);
 
         divider = new Hr();
         divider.setWidthFull();

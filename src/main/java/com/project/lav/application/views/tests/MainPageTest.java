@@ -1,4 +1,4 @@
-package com.project.lav.application.views;
+package com.project.lav.application.views.tests;
 
 import com.project.lav.application.data.components.ResourcePanel;
 import com.project.lav.application.data.components.MenuPanel;
@@ -12,7 +12,7 @@ import com.vaadin.flow.component.Component;
 
 @Tag("main-page")
 @JsModule("./src/main-page.ts")
-public class MainPage extends LitTemplate implements RouterLayout {
+public class MainPageTest extends LitTemplate implements RouterLayout {
     @Id("heading")
     private Div heading;
     @Id("sideMenu")
@@ -20,7 +20,7 @@ public class MainPage extends LitTemplate implements RouterLayout {
     @Id("resourcePanel")
     private ResourcePanel resourcePanel;
 
-    public MainPage() {
+    public MainPageTest() {
         createHeader();
         createSideMenu();
         createResourcePanel();
