@@ -1,8 +1,102 @@
 html, body {
     height: 100% !important;
     /* background-color: #828282; */
+    --lumo-font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+    font-family: "Roboto", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
     overflow: hidden;
 }
+
+.panel {
+    position: fixed;
+    z-index: 1;
+    background-color: var(--lumo-base-color);
+    overflow: hidden;
+    transition: 0.2s;
+    border: 1px solid black;
+}
+
+.resources {
+    display: flex;
+    bottom: 0;
+    height: 40px;
+    width: 80vw;
+    margin-left: 18vw;
+    margin-right: 2vw;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-style: none;
+}
+.menu-title {
+    font-size: 2rem;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px auto auto auto;
+    text-decoration: underline;
+}
+.menuTitle-close {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    height: fit-content;
+}
+.panel-title {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: fit-content;
+    height: 33px;
+    border-bottom: 1px solid black;
+}
+.panelbtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-top: 5px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    width: fit-content;
+}
+
+.info {
+    position: absolute;
+    border: 1px solid black;
+    border-style: hidden;
+    width: 95%;
+    height: 0px;
+    bottom: 0;
+    right: 5px;
+    transition: height 0.2s;
+}
+.vuln-nav-tabs {
+    width: fit-content !important;
+    position: absolute;
+    top: 0;
+    height: 30px;
+    margin: 7px auto 0px 150px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-bottom: none;
+}
+/* vaadin-tab {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    transition: 0.2s;
+}
+vaadin-tab:hover {
+    background-color: #ddd;
+} */

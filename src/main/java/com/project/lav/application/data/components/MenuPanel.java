@@ -31,11 +31,11 @@ public class MenuPanel extends Div {
         menuList.setPadding(false);
         menuList.setSpacing(true);
         menuList.setSizeFull();
-        menuList.getStyle().set("padding-left", "2px");
+        menuList.getStyle().set("padding-left", "10px").set("overflow", "hidden");
 
         addClassNames("menu", "panel");
 
-        addMenuTitle();
+        //addMenuTitle();
         addCheckList();
         addPreferences();
 
@@ -67,7 +67,7 @@ public class MenuPanel extends Div {
     private void addCheckList() {
         checkList = new VerticalLayout();
         taskList = new Accordion();
-        taskList.getStyle().set("transition", "ease 0.5s");
+        // taskList.getStyle().set("transition", "ease 0.5s");
         taskList.setWidthFull();
         listTitle = new H2("Checklist");
         listTitle.setClassName("menu-title");
