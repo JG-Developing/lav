@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Table(name = "\"user\"")
 @Entity
-public class User {
+public class user {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,10 +23,10 @@ public class User {
     private String passwordSalt;
     private String passwordHash;
 
-    public User(){};
+    public user(){};
 
     @Autowired
-    public User(String username, String password, String position){
+    public user(String username, String password, String position){
         this.username = username;
         this.password = password;
         this.position = position;
@@ -34,7 +34,7 @@ public class User {
         this.passwordHash = DigestUtils.sha1Hex(password + passwordSalt);
     }
 
-    public User(String username, String password){
+    public user(String username, String password){
         this.username = username;
         this.password = password;
         this.position = "Guest";

@@ -1,6 +1,6 @@
 package com.project.lav.application.data.repository;
 
-import com.project.lav.application.data.entity.User;
+import com.project.lav.application.data.entity.user;
 import java.util.List;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @EnableAutoConfiguration
-public interface UserRepository extends JpaRepository<User, Integer> {
-    User getByUsername(String username);
-    List<User> findByPosition(String position);
+public interface userRepository extends JpaRepository<user, Integer> {
+    user getByUsername(String username);
+    List<user> findByPosition(String position);
 }

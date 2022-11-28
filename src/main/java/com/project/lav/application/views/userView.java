@@ -1,22 +1,20 @@
-package com.project.lav.application.views;
+package com.project.lav;
 
 import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.applayout.*;
+import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.checkbox.*;
-import com.vaadin.flow.component.html.*;
-import com.vaadin.flow.component.orderedlayout.*;
-import com.vaadin.flow.component.tabs.*;
-import com.vaadin.flow.dom.ThemeList;
-import com.vaadin.flow.router.*;
-import com.vaadin.flow.theme.lumo.Lumo;
-//import com.vaadin.flow.component.checkbox.Checkbox;
-//import com.vaadin.flow.theme.Theme;
-//import com.project.lav.application.data.components.MenuPanel;
+import com.vaadin.flow.component.checkbox.CheckboxGroup;
+import com.vaadin.flow.component.checkbox.CheckboxGroupVariant;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.tabs.Tab;
+import com.vaadin.flow.component.tabs.Tabs;
+import com.vaadin.flow.router.Route;
+import java.util.HashMap;
+import java.util.Map;
 
 
-@Route(value = "userView")
-@PageTitle("Home | User")
+@Route("userView")
 public class userView extends AppLayout {
     Button logout = new Button("Logout");
 
@@ -32,9 +30,17 @@ public class userView extends AppLayout {
         Tab status = new Tab("Update Status");
         Tab preferences = new Tab("Preferences");
 
+        Map<Tab, Class> tabsMap = new HashMap<>();
+        tabsMap.put(status, statusView.class);
+        //tabsMap.put(resources, resourcesView.class);
+        tabsMap.put(preferences, preferencesView.class);
+
+
         Tabs tabs = new Tabs(tasks, dashboard, resources, status, preferences);
 
-        Div preferencesContent = new Div();
+        tabs.addSelectedChangeListener(event -> {
+            UI.getCurrent().navigate(tabsMap.get(event.getSelectedTab()));
+        });
 
         CheckboxGroup<String> checkboxGroup = new CheckboxGroup<>();
         checkboxGroup.setLabel("To Do");
@@ -43,21 +49,16 @@ public class userView extends AppLayout {
         checkboxGroup.addThemeVariants(CheckboxGroupVariant.LUMO_VERTICAL);
         tasks.add(checkboxGroup);
 
-        Button darkThemeToggle = new Button("Toggle dark theme", click -> {
-            ThemeList themeList = UI.getCurrent().getElement().getThemeList();
-
-            if (themeList.contains(Lumo.DARK)) {
-                themeList.remove(Lumo.DARK);
-            } else {
-                themeList.add(Lumo.DARK);
-            }
-        });
-
-        preferencesContent.add(new VerticalLayout());
-
         tabs.setOrientation(Tabs.Orientation.VERTICAL);
 
+        Button logout = new Button("Logout");
+        logout.addClickListener(onClick -> {
+            UI.getCurrent().navigate("login");
+        });
+
+        addToDrawer(logout);
         addToDrawer(tabs);
         addToNavbar(toggle, title);
+        setPrimarySection(Section.DRAWER);
     }
 }
