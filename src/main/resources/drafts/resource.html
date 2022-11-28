@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Resource Tab-Draft</title>
+    <link href="resource.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    
+    <main>
+        <div class="header">
+            <h1 class="header-text">Lessons and Applications of Vulnerabilities</h1>
+        </div>
+        <div id="Side-Menu" class="menu">
+            <h2 class="menu-title">Menu</h2>
+            <div id="Menu-Expand" class="menubtn-open">
+                <a href="javascript:void(0)" class="menuOpen" onclick="openMenu()">
+                Expand</a>
+            </div>
+            <div id="Menu-Collapse" class="menubtn-close">
+                <a href="javascript:void(0)" class="menuClose" onclick="closeMenu()">
+                Collapse</a>
+            </div>
+        </div>
+        <div id="Content-Area" class="content">
+
+        </div>
+        <div id="Resource-Panel" class="resources full-view">
+            <h2 class="panel-title">Resources:</h2>
+            <div id="Resource-Expand" class="expand-container">
+                <a href="javascript:void(0)" class="openbtn" onclick="openNav()">Expand &and;</a>
+            </div>
+            <div id="Resource-Collapse" class="collapse-container">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Collapse &or;</a>
+            </div>
+            <div class="vuln-nav-tabs">
+                <button class="vulnLink vuln-button" onclick="openVuln(event, 'Vuln1')">Vulnerability 1</button>
+                <button class="vulnLink vuln-button" onclick="openVuln(event, 'Vuln2')">Vulnerability 2</button>
+                <button class="vulnLink vuln-button" onclick="openVuln(event, 'Vuln3')">Vulnerability 3</button>
+              </div>
+            <div id="Resource-Info" class="info">
+                <div id="Vuln1" class="vulnContent active">
+                    <h3>Vulnerability 1</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas doloremque repudiandae expedita, 
+                        eaque quibusdam, ab possimus illo velit deleniti beatae laboriosam iusto vel impedit sit odit molestiae saepe 
+                        consectetur doloribus.</p>
+                </div>
+                <div id="Vuln2" class="vulnContent">
+                    <h3>Vulnerability 2</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi eum doloremque cupiditate, molestias 
+                        officia vel error adipisci, laborum velit, minima officiis quos quam voluptatum porro recusandae aperiam ipsam 
+                        quaerat fugit.</p>
+                </div>
+                <div id="Vuln3" class="vulnContent">
+                    <h3>Vulnerability 3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet rem mollitia voluptatem 
+                        error inventore dolorem facere necessitatibus repellat. Dolorum tempora molestias veritatis similique 
+                        quia officiis labore tempore quo explicabo!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="resource.js"></script>
+</body>
+
+</html>

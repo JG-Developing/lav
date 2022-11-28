@@ -1,0 +1,205 @@
+html {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body, main {
+    background-color: #828282;
+    height: 100%;
+    margin:0px;
+    overflow: hidden;
+}
+
+.resources {
+    position: fixed;    /* Stay in place */
+    bottom: 0;          /* Position at bottom of page */
+    height: 40px;       /* Specify a height (Changes with Code) */
+    width: 80vw;        /* Specify a width */
+    margin-left: 18vw;  /* Keep content at specific area of page */
+    margin-right: 2vw;
+    z-index: 1;         /* Stay on top */
+    background-color: white !important;
+    overflow-y: hidden; /* Disable vertical scroll */
+    transition: 0.5s;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border: 1px solid black;
+    border-bottom-style: none;
+}
+
+.content {
+    position: fixed;
+    background-color: white;
+    right: 2vw;
+    bottom: 210px;
+    width: 75vw;
+    height: 65vh;
+    margin-right: 2vw;
+    border: 1px solid black;
+    border-radius: 18px;
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: 0px;
+    height: 100%;
+    width: 40px;
+    z-index: 1;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border: 1px solid black;
+    border-left-style: none;
+}
+
+.panel-title {
+    margin-top: 5px;
+    margin-left: 10px;
+    text-decoration: underline;
+    width: fit-content;
+}
+
+.menu-title {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width:fit-content;
+    height: fit-content;
+}
+
+.header-text {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 10px;
+}
+
+.header {
+    position: fixed;
+    margin-left: 18vw;
+    margin-right: 2vw;
+    width: 80vw;
+    height:fit-content;
+    margin-bottom: 5px;
+}
+
+/* The sidepanel links */
+.resources a, span {
+    /* padding: 8px 8px 8px 32px; */
+    text-decoration: none;
+    /* font-size: 25px; */
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+/* .sidepanel a:hover {
+    color: #f1f1f1;
+} */
+
+.menubtn-open {
+    display: block;
+}
+
+.menubtn-close {
+    display: none;
+}
+
+.collapse-container {
+    display: none;
+    transition: 0.5s;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
+
+.expand-container {
+    display: block;
+    transition: 0.5s;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-left: 50px;
+    margin-top: 5px;
+    /* margin-right: 10px; */
+    font-size: 1.5rem;
+}
+
+/* .openbtn:hover {
+    background-color: #444;
+} */
+
+.info {
+    position: absolute;
+    border: 1px solid black;
+    width: 95%;
+    height: 0%;
+    bottom: 0;
+    right: 5px;
+    transition: 0.25s;
+}
+
+.vuln-nav-tabs {
+    position: absolute;
+    top: 0;
+    height: 30px;
+    width: fit-content;
+    margin-left: 150px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-bottom: none;
+}
+.vuln-nav-tabs button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    transition: 0.3s;
+}
+
+.vuln-nav-tabs button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.vuln-nav-tabs button.active {
+    background-color: #ccc;
+}
+
+.vulnContent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin-top: 0px;
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
