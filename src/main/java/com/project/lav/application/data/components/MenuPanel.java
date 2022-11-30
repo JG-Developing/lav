@@ -87,10 +87,10 @@ public class MenuPanel extends Div {
         // loginPanel.addThemeVariants(DetailsVariant.FILLED);
         // loginPanel.setWidthFull();
 
-        Checkbox homeTask1 = new Checkbox("This Is Task 1");
-        Checkbox homeTask2 = new Checkbox("This Is Task 2");
-        Checkbox homeTask3 = new Checkbox("This Is Task 3");
-        homeList = new VerticalLayout(homeTask1, homeTask2, homeTask3);
+        Checkbox homeTask1 = new Checkbox("Inject JavaScript into Status");
+        Checkbox homeTask2 = new Checkbox("Utilize Cross Site Scripting");
+        //Checkbox homeTask3 = new Checkbox("This Is Task 3");
+        homeList = new VerticalLayout(homeTask1, homeTask2);
         homeList.setSpacing(false);
         homeList.setPadding(false);
         taskList.add("Home Screen", homeList);
@@ -98,10 +98,9 @@ public class MenuPanel extends Div {
         // homePanel.addThemeVariants(DetailsVariant.FILLED);
         // homePanel.setWidthFull();
 
-        Checkbox databaseTask1 = new Checkbox("This is Task 1");
-        Checkbox databaseTask2 = new Checkbox("This is Task 2");
-        Checkbox databaseTask3 = new Checkbox("This is Task 3");
-        databaseList = new VerticalLayout(databaseTask1, databaseTask2, databaseTask3);
+        Checkbox databaseTask1 = new Checkbox("Remove Data From Database");
+        Checkbox databaseTask2 = new Checkbox("Elevate Privilege");
+        databaseList = new VerticalLayout(databaseTask1, databaseTask2);
         databaseList.setSpacing(false);
         databaseList.setPadding(false);
         taskList.add("Database", databaseList);

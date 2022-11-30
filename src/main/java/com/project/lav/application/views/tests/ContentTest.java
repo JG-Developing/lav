@@ -11,7 +11,7 @@ import com.vaadin.flow.router.PageTitle;
 //import com.vaadin.flow.component.UI;
 //import com.vaadin.flow.component.login.LoginOverlay;
 
-@Route(value="testing", layout = MainLayout.class)
+@Route(value="", layout = MainLayout.class)
 @PageTitle("Testing")
 public class ContentTest extends Div {
 
