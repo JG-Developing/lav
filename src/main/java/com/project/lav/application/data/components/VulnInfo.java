@@ -49,12 +49,12 @@ public class VulnInfo extends Div {
     private void createVulnContent(String vulnerability) {
         setTopic(vulnerability);
         if (vulnerability.equals("SQL Injection")) {
-            setDescription("This vulnerability occurs when a web page has an input field which retrieves information from a database, thereby letting a malicious attacker input SQL Database code to obtain private information or to even completely destroy the database. The login page on this application is susceptible to SQL Injection");
+            setDescription("This vulnerability occurs when a web page has an input field which retrieves information from a database, thereby letting a malicious attacker input SQL Database code to obtain private information or to even completely destroy the database.");
             externalLink1 = new Anchor("https://owasp.org/www-community/attacks/SQL_Injection", "OWASP Page");
             externalLink2 = new Anchor("https://www.w3schools.com/sql/sql_injection.asp", "W3 Page With Examples");
         }
         else if (vulnerability.equals("JavaScript Injection")) {
-            setDescription("This vulnerability occurs when a website could have user submitted forms or URL parameters that can be manipulated. Doing so can allow a malicious attacker to inject their own JavaScript directly into the from or URL which can cause private information to be taken or malicious scripts to be run on the web page. /status has an input field that JS injections are applicable.");
+            setDescription("This vulnerability occurs when a website could have user submitted forms or URL parameters that can be manipulated. Doing so can allow a malicious attacker to inject their own JavaScript directly into the from or URL which can cause private information to be taken or malicious scripts to be run on the web page.");
             externalLink1 = new Anchor("https://owasp.org/www-community/attacks/xss/", "OWASP XSS Page");
             externalLink2 = new Anchor("https://portswigger.net/web-security/cross-site-scripting", "PortSwigger XSS");
         }
