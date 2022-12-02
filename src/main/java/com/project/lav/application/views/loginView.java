@@ -14,7 +14,7 @@ import com.vaadin.flow.router.PageTitle;
 //import com.vaadin.flow.component.login.LoginOverlay;
 
 @Route(value="", layout = MainLayout.class)
-@PageTitle("Testing")
+@PageTitle("LAV | Login")
 public class LoginView extends Div {
 
     private LoginForm loginForm = new LoginForm();
