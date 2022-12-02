@@ -2,24 +2,34 @@ package com.project.lav.application.views;
 
 import com.project.lav.application.data.service.AuthService;
 import com.project.lav.application.data.service.AuthService.AuthServiceException;
-import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.login.LoginOverlay;
+import com.project.lav.application.data.components.ResourcePanel;
+import com.project.lav.application.views.MainLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.html.Div;
+//import com.vaadin.flow.component.login.LoginForm;
+import com.vaadin.flow.component.login.*;
+import com.vaadin.flow.router.PageTitle;
+//import com.vaadin.flow.component.Composite;
+//import com.vaadin.flow.component.UI;
+//import com.vaadin.flow.component.login.LoginOverlay;
 
-//for styling
-//@CSSImport(".styles/views/login/login-view.css");
-@Route("login")
-public class loginView extends Composite<LoginOverlay> {
-    public loginView(AuthService authService){
-        LoginOverlay layout = getContent();
-        layout.setOpened(true);
-        layout.setForgotPasswordButtonVisible(false);
-        layout.setTitle("LAV");
-        layout.setDescription("A new way of learning vulnerabilities");
+@Route(value="", layout = MainLayout.class)
+@PageTitle("Testing")
+public class LoginView extends Div {
 
-        layout.addLoginListener(event -> {
-            //show different view for admin login
+    private LoginForm loginForm = new LoginForm();
+    private ResourcePanel resource = new ResourcePanel();
+
+    public LoginView(AuthService authService) {
+        getStyle().set("display", "flex").set("justify-content", "center")
+        .set("padding", "var(--lumo-space-l)").set("overflow", "hidden");
+
+        //setSizeFull();
+
+        add(loginForm, resource);
+
+        loginForm.addLoginListener(event -> {
             try {
                 authService.authenticate(event.getUsername(), event.getPassword());
                 if ("admin".equals(event.getUsername())){
@@ -29,13 +39,11 @@ public class loginView extends Composite<LoginOverlay> {
                     //UI.getCurrent().navigate("guestView");
                 }
                 else {
-                    UI.getCurrent().navigate("userView");
+                    UI.getCurrent().navigate("status");
                 }
             }
             catch (AuthServiceException e){
             }
-
         });
     }
-
 }

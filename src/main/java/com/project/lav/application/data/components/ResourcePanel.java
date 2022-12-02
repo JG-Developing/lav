@@ -16,8 +16,8 @@ public class ResourcePanel extends Div {
     private H2 panelTitle;
     private Button resizeBtn;
     private Tab sqlInjection;
-    private Tab crossSiteScripting;
-    private Tab vuln3;
+    private Tab directoryTraversal;
+    private Tab javascriptInjection;
 
     public ResourcePanel() {
         addClassNames("resources", "panel");
@@ -36,9 +36,9 @@ public class ResourcePanel extends Div {
 
     private void addNavTabs() {
         sqlInjection = new Tab("SQL Injection");
-        crossSiteScripting = new Tab("Cross Site Scripting");
-        vuln3 = new Tab("Vulnerability 3");
-        Tabs vulnNav = new Tabs(sqlInjection, crossSiteScripting, vuln3);
+        javascriptInjection = new Tab("JavaScript Injection");
+        directoryTraversal = new Tab("Directory Traversal");
+        Tabs vulnNav = new Tabs(sqlInjection, javascriptInjection, directoryTraversal);
 
         vulnNav.addSelectedChangeListener(event -> 
                 setVulnInfo(event.getSelectedTab()));
@@ -88,13 +88,14 @@ public class ResourcePanel extends Div {
     private void setVulnInfo(Tab tab) {
         vulnInfo.removeAll();
 
-        if (tab.equals(sqlInjection)) {
-            vulnInfo.setNewVuln(tab.getLabel());
-        } else if (tab.equals(crossSiteScripting)) {
-            vulnInfo.setNewVuln(tab.getLabel());
-        } else {
-            vulnInfo.setNewVuln(tab.getLabel());
-        }
+        vulnInfo.setNewVuln(tab.getLabel());
+        // if (tab.equals(sqlInjection)) {
+        //     vulnInfo.setNewVuln(tab.getLabel());
+        // } else if (tab.equals(crossSiteScripting)) {
+        //     vulnInfo.setNewVuln(tab.getLabel());
+        // } else {
+        //     vulnInfo.setNewVuln(tab.getLabel());
+        // }
     }
 
 }
