@@ -3,7 +3,6 @@ package com.project.lav.application.views;
 import com.project.lav.application.data.service.AuthService;
 import com.project.lav.application.data.service.AuthService.AuthServiceException;
 import com.project.lav.application.data.components.ResourcePanel;
-import com.project.lav.application.views.MainLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
