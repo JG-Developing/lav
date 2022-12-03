@@ -9,7 +9,7 @@ import com.vaadin.flow.router.Route;
 //import com.vaadin.flow.component.button.Button;
 
 @Route(value = "adminView")
-@PageTitle("Home | Admin")
+@PageTitle("LAV | Admin View")
 public class adminView extends AppLayout {
     //private Button logout = new Button("Logout");
     private MenuPanel menu = new MenuPanel();

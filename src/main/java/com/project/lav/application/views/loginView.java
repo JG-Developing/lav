@@ -34,7 +34,7 @@ public class loginView extends Div {
                     //UI.getCurrent().navigate("guestView");
                 }
                 else {
-                    UI.getCurrent().navigate("status");
+                    UI.getCurrent().navigate("userView");
                 }
             }
             catch (AuthServiceException e){
