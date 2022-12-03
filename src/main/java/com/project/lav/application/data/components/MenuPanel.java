@@ -2,33 +2,36 @@ package com.project.lav.application.data.components;
 
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.button.*;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.icon.VaadinIcon;
+//import com.vaadin.flow.component.icon.*;
 import com.vaadin.flow.component.accordion.*;
 import com.vaadin.flow.component.orderedlayout.*;
 import com.vaadin.flow.dom.ThemeList;
 import com.vaadin.flow.theme.lumo.Lumo;
 import com.vaadin.flow.component.checkbox.*;
-import com.vaadin.flow.component.ClickEvent;
+//import com.vaadin.flow.component.ClickEvent;
 //import com.vaadin.flow.component.orderedlayout.FlexComponent.*;
 import com.vaadin.flow.component.UI;
 
 public class MenuPanel extends Div {
-    private Icon openMenu = new Icon(VaadinIcon.ANGLE_RIGHT);
-    private Icon closeMenu = new Icon(VaadinIcon.ANGLE_LEFT);
+    //private Icon openMenu = new Icon(VaadinIcon.ANGLE_RIGHT);
+    //private Icon closeMenu = new Icon(VaadinIcon.ANGLE_LEFT);
     private Button darkThemeToggle;
+    private Button goToStatus;
+    private Button logout;
     VerticalLayout menuList;
     VerticalLayout checkList;
     VerticalLayout preferenceList;
+    VerticalLayout navigationList;
     VerticalLayout loginList;
     VerticalLayout homeList;
     VerticalLayout databaseList;
     private Hr divider;
     private Accordion taskList;
-    private Button resizeBtn;
+    //private Button resizeBtn;
     private H2 menuTitle;
     private H2 listTitle;
     private H2 preferenceTitle;
+    private H2 navigationTitle;
 
     public MenuPanel() {
         menuList = new VerticalLayout();
@@ -39,19 +42,20 @@ public class MenuPanel extends Div {
 
         addClassNames("menu", "panel");
 
-        //addMenuTitle();
+        addMenuTitle();
         addCheckList();
+        addNavigationList();
         addPreferences();
 
         add(menuList);
     }
 
     private void addMenuTitle() {
-        resizeBtn = new Button("", this::resizePanel);
-        resizeBtn.setIcon(closeMenu);
-        resizeBtn.setClassName("menubtn");
-        resizeBtn.addThemeVariants(ButtonVariant.LUMO_TERTIARY, 
-                                   ButtonVariant.LUMO_SMALL);
+        // resizeBtn = new Button("", this::resizePanel);
+        // resizeBtn.setIcon(closeMenu);
+        // resizeBtn.setClassName("menubtn");
+        // resizeBtn.addThemeVariants(ButtonVariant.LUMO_TERTIARY, 
+        //                            ButtonVariant.LUMO_SMALL);
         menuTitle = new H2("Menu");
         menuTitle.addClassName("menu-title");
 
@@ -65,7 +69,7 @@ public class MenuPanel extends Div {
         divider.setWidthFull();
         divider.getStyle().set("margin", "1px");
         
-        add(menuTitle, resizeBtn, divider);
+        add(menuTitle, divider);
     }
 
     private void addCheckList() {
@@ -118,6 +122,26 @@ public class MenuPanel extends Div {
         menuList.add(checkList, divider);
     }
 
+    private void addNavigationList() {
+        navigationTitle = new H2("Navigation");
+        goToStatus = new Button("Status Screen");
+        logout = new Button("Logout");
+
+        navigationTitle.addClassName("menu-title");
+        logout.addClickListener(onClick -> {
+            UI.getCurrent().navigate("");
+        });
+        goToStatus.addClickListener(onClick -> {
+            UI.getCurrent().navigate("status");
+        });
+
+        navigationList = new VerticalLayout(navigationTitle, goToStatus, logout);
+
+        menuList.add(navigationList);
+
+
+    }
+
     private void addPreferences() {
         preferenceList = new VerticalLayout();
         preferenceTitle = new H2("Preferences");
@@ -142,20 +166,20 @@ public class MenuPanel extends Div {
         menuList.add(preferenceList, divider);
     }
 
-    private void resizePanel(ClickEvent<Button> event) {
-        if (event.getSource().getIcon().equals(closeMenu)) {
-            getStyle().set("width", "40px");
-            menuList.getStyle().set("display", "none");
-            event.getSource().setIcon(openMenu);
-            menuTitle.removeClassName("menu-title");
-            menuTitle.setClassName("menuTitle-close");
-        }
-        else {
-            getStyle().set("width", "15vw");
-            menuList.getStyle().set("display", "block");
-            event.getSource().setIcon(closeMenu);
-            menuTitle.removeClassName("menuTitle-close");
-            menuTitle.setClassName("menu-title");
-        }
-    }
+    // private void resizePanel(ClickEvent<Button> event) {
+    //     if (event.getSource().getIcon().equals(closeMenu)) {
+    //         getStyle().set("width", "40px");
+    //         menuList.getStyle().set("display", "none");
+    //         event.getSource().setIcon(openMenu);
+    //         menuTitle.removeClassName("menu-title");
+    //         menuTitle.setClassName("menuTitle-close");
+    //     }
+    //     else {
+    //         getStyle().set("width", "15vw");
+    //         menuList.getStyle().set("display", "block");
+    //         event.getSource().setIcon(closeMenu);
+    //         menuTitle.removeClassName("menuTitle-close");
+    //         menuTitle.setClassName("menu-title");
+    //     }
+    // }
 }

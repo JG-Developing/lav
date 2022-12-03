@@ -6,21 +6,17 @@ import com.project.lav.application.data.components.ResourcePanel;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
-//import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.login.*;
 import com.vaadin.flow.router.PageTitle;
-//import com.vaadin.flow.component.Composite;
-//import com.vaadin.flow.component.UI;
-//import com.vaadin.flow.component.login.LoginOverlay;
 
 @Route(value="", layout = MainLayout.class)
 @PageTitle("LAV | Login")
-public class LoginView extends Div {
+public class loginView extends Div {
 
     private LoginForm loginForm = new LoginForm();
     private ResourcePanel resource = new ResourcePanel();
 
-    public LoginView(AuthService authService) {
+    public loginView(AuthService authService) {
         getStyle().set("display", "flex").set("justify-content", "center")
         .set("padding", "var(--lumo-space-l)").set("overflow", "hidden");
 
